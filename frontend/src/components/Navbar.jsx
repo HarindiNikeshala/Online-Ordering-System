@@ -2,6 +2,7 @@ import { Container, Flex, HStack, Text, Button, useColorMode } from "@chakra-ui/
 import { CiSquarePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
+import { FaOpencart } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -26,7 +27,8 @@ const Navbar = () => {
           textAlign={"center"}
           fontWeight='extrabold'
         >
-          <Link to={"/"}>Product Store</Link>
+          <Link to={"/"}>Product Store </Link>
+          <Button><FaOpencart /></Button>
         </Text>
 
         <HStack spacing={2} alignItems={"center"}>
