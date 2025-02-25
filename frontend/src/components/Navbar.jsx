@@ -1,7 +1,7 @@
 import { Container, Flex, HStack, Text, Button, useColorMode } from "@chakra-ui/react"
 import { CiSquarePlus } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import { IoIosMoon, IoIosSunny } from "react-icons/io";
 
 const Navbar = () => {
 
@@ -36,7 +36,7 @@ const Navbar = () => {
             </Button>
           </Link>
           <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <IoMdMoon size="20" /> : <IoMdSunny size="20" />}
+            {colorMode === "light" ? <IoIosMoon size="20" /> : <IoIosSunny size="20" />}
           </Button>
         </HStack>
       </Flex>
