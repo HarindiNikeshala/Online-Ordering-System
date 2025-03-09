@@ -13,10 +13,9 @@ const CreatePage = () => {
     const toast = useToast()
 
     const { createProduct } = useProductStore();
+
     const handleAddProduct = async () => {
         const { success, message } = await createProduct(newProduct);
-        // console.log("Success:", success);
-        // console.log("Message:", message);
         if (!success) {
             toast({
                 title: "Error",
@@ -28,7 +27,7 @@ const CreatePage = () => {
             toast({
                 title: "Success",
                 description: message,
-                status: "Success",
+                status: "success",
                 isClosable: true
             });
         }
@@ -62,7 +61,7 @@ const CreatePage = () => {
                             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
                         >
                         </Input>
-                        <Button colorScheme='pink' onClick={handleAddProduct} w="full"> Add Product </Button>
+                        <Button  colorScheme='pink' onClick={handleAddProduct} w="full"> Add Product </Button>
                     </VStack>
                 </Box>
             </VStack>
