@@ -5,8 +5,6 @@ import { useProductStore } from '../store/product';
 
 const ProductCard = ({ product }) => {
 
-    // const [updatedProduct, setUpdatedProduct] = useState(product);
-
     const [updatedProduct, setUpdatedProduct] = useState({
         name: '',
         price: '',
@@ -28,7 +26,6 @@ const ProductCard = ({ product }) => {
 
     const { deleteProduct, updateProduct } = useProductStore();
     const toast = useToast();
-
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const handleDeleteProduct = async (pid) => {
@@ -55,7 +52,7 @@ const ProductCard = ({ product }) => {
 
     const handleUpdateProduct = async (pid, updatedProduct) => {
         const { success, message } = await updateProduct(pid, updatedProduct);
-        if(!success) {
+        if (!success) {
             toast({
                 title: "Error",
                 description: message,
@@ -69,9 +66,9 @@ const ProductCard = ({ product }) => {
                 description: "Product updated successfully",
                 status: "success",
                 duration: 3000,
-                isClosable: true 
-            }); 
-            onClose();  
+                isClosable: true
+            });
+            onClose();
         }
     };
 
@@ -100,16 +97,13 @@ const ProductCard = ({ product }) => {
                 <Text fontWeight='bold' fontSize='xl' color={textcolor} mb={4}>
                     ${product?.price}
                 </Text>
-
                 <HStack spacing={2}>
                     <IconButton icon={<EditIcon />} onClick={onOpen} colorScheme='purple' />
                     <IconButton icon={<DeleteIcon />} onClick={() => handleDeleteProduct(product._id)} colorScheme='red' />
                 </HStack>
             </Box>
-
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-
                 <ModalContent>
                     <ModalHeader>
                         Update Product
@@ -126,9 +120,7 @@ const ProductCard = ({ product }) => {
                         </VStack>
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme='pink' mr={3}
-                            onClick={() => handleUpdateProduct(product._id, updatedProduct)}
-                        >
+                        <Button colorScheme='pink' mr={3} onClick={() => handleUpdateProduct(product._id, updatedProduct)} >
                             Update
                         </Button>
                         <Button variant={"ghost"} onClick={onClose}>

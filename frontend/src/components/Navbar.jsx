@@ -5,7 +5,6 @@ import { IoIosMoon, IoIosSunny } from "react-icons/io";
 import { FaOpencart } from "react-icons/fa";
 
 const Navbar = () => {
-
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -41,6 +40,7 @@ const Navbar = () => {
             {colorMode === "light" ? <IoIosMoon size="20" /> : <IoIosSunny size="20" />}
           </Button>
         </HStack>
+
       </Flex>
     </Container>
   );

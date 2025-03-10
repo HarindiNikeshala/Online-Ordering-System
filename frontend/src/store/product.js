@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { updateProduct } from "../../../backend/controllers/product.control";
 
 export const useProductStore = create((set) => ({
     products: [],

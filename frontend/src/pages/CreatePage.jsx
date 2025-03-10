@@ -11,7 +11,6 @@ const CreatePage = () => {
     });
 
     const toast = useToast()
-
     const { createProduct } = useProductStore();
 
     const handleAddProduct = async () => {

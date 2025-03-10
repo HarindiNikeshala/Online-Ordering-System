@@ -9,7 +9,6 @@ const HomePage = () => {
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts]);
-  console.log("Products", products);
 
   return (
     <div>
