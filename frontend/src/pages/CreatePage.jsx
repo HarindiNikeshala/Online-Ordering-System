@@ -46,22 +46,19 @@ const CreatePage = () => {
                             name='name'
                             value={newProduct.name}
                             onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-                        >
-                        </Input>
+                        />
                         <Input placeholder={"Price"}
                             name='Price'
                             type='number'
                             value={newProduct.price}
                             onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
-                        >
-                        </Input>
+                        />
                         <Input placeholder={"Image URL"}
                             name='image'
                             value={newProduct.image}
                             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
-                        >
-                        </Input>
-                        <Button  colorScheme='pink' onClick={handleAddProduct} w="full"> Add Product </Button>
+                        />
+                        <Button colorScheme='pink' onClick={handleAddProduct} w="full"> Add Product </Button>
                     </VStack>
                 </Box>
             </VStack>
